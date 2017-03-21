@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="KinectRobotics.BaseControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             mc:Ignorable="d" Width="1100" Height="693" Background="#009999">
+    <Grid>
+
+        <k:KinectUserViewer k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" Name="sensorChooserUi" />
+            <k:KinectScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" Margin="0,0,0,-0.2" Background="#FF5D95CD" Height="612" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="1000" >
+     
+                <k:KinectTileButton Label="Push to move Forward" Click="KinectTileButtonClick" Width="425" />
+               
+            </k:KinectScrollViewer>
+        <Image HorizontalAlignment="Left" Height="311" Margin="708,246,0,0" VerticalAlignment="Top" Width="292" Source="Images/Right arrow.png"/>
+        <Image HorizontalAlignment="Left" Height="311" Margin="10,246,0,0" VerticalAlignment="Top" Width="288" Source="Images/Left arrow.png"/>
+        <Label Foreground="White" Content="Swipe LEFT to turn Left" HorizontalAlignment="Left" Margin="690,152,-276.8,0" VerticalAlignment="Top" FontSize="30" Width="328"/>
+        <Label Foreground="White" Content="Swipe RIGHT to turn Right" Margin="10,152,374.2,0" VerticalAlignment="Top" FontSize="30" HorizontalAlignment="Left"/>
+    </Grid>
+</UserControl>
